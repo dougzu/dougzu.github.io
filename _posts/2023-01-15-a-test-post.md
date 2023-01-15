@@ -5,6 +5,11 @@ date:   2023-01-15 16:46:00 -0600
 categories: jekyll update
 ---
 This post serves as a test post. I am specifically testing footnotes [^1] and LaTeX.
+
+Test inline {% katex %}
+f\left(\frac{x}{2}\right) = e^2
+{% endkatex %}
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
