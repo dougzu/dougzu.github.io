@@ -32,7 +32,7 @@ github_username:  jekyll
 # Build settings
 remote_theme: jekyll/minima # Force download of updated minima theme. Default minima that GitHub uses is super out of date. Attempted fix for: https://stackoverflow.com/questions/68518590/does-minima-dark-skin-work-on-github-pages
 #theme: minima
-remote_theme: minima
+remote_theme: jekyll/minima
 minima: 
   skin: dark
 plugins:
