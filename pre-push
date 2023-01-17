@@ -23,7 +23,6 @@ if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
     git checkout gh-pages
     rm -r !(${temp_folder})
     ls
-    #rm -rf ./*
 
     # Copy the site content from the temp folder and remove the temp folder
     cp -r ./${temp_folder}/* .
