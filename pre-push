@@ -8,7 +8,7 @@ set -e
 
 temp_folder="._temp"
 
-# Make sure our main code runs only if we push the master branch
+# Make sure our main code runs only if we push the main branch
 if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
     # Store the last commit message from main branch
     last_message=$(git show -s --format=%s main)
@@ -21,22 +21,22 @@ if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
     ls
     # Checkout the gh-pages branch and clean it's contents. Don't delete temp_folder.
     git checkout gh-pages
-    rm -r !("${temp_folder}")
+    rm -rf !("${temp_folder}")
     ls
 
     # Copy the site content from the temp folder and remove the temp folder
     cp -r ./${temp_folder}/* .
-    rm -r ./${temp_folder}
+    rm -rf ./${temp_folder}
 
     # Commit and push our generated site to GitHub
     git add -A
     git commit -m "Built \`$last_message\`"
     git push
 
-    # Go back to the master branch
+    # Go back to the main branch
     git checkout main
 else
-    echo "Not master branch. Skipping build"
+    echo "Not main branch. Skipping build"
 fi
 # Enter zsh
 exit 0
