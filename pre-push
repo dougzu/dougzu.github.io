@@ -23,7 +23,7 @@ if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
 
     # Copy the site content from the temp folder and remove the temp folder
     cp -r ../${temp_folder}/* .
-    #rm -rf ../${temp_folder}
+    rm -rf ../${temp_folder}/_site/
 
     # Commit and push our generated site to GitHub
     git add -A
@@ -32,6 +32,7 @@ if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
 
     # Go back to the master branch
     git checkout main
+    git push
 else
     echo "Not master branch. Skipping build"
 fi
