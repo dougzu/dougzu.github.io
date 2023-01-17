@@ -35,8 +35,9 @@ if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
 
     # Go back to the main branch
     git checkout main
+    exit 0
 else
     echo "Not main branch. Skipping build"
 fi
 # Enter zsh
-exit 0
+zsh
