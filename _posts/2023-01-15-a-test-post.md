@@ -2,7 +2,7 @@
 layout: post
 title:  "A Test Post"
 date:   2023-01-15 16:46:00 -0600
-categories: jekyll update
+categories: meta figuring
 ---
 This post serves as a test post. I am specifically testing footnotes [^1] and LaTeX.
 
