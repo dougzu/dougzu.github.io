@@ -18,10 +18,10 @@ if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
 
     # Move the generated site in our temp folder
     mv ./_site ./${temp_folder}
-
+    ls
     # Checkout the gh-pages branch and clean it's contents. Don't delete temp_folder.
     git checkout gh-pages
-    rm -r !(${temp_folder})
+    rm -r !("${temp_folder}")
     ls
 
     # Copy the site content from the temp folder and remove the temp folder
