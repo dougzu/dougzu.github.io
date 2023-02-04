@@ -19,18 +19,16 @@
 # in the templates via {{ site.myvariable }}.
 
 title: dougz.info
-email: your-email@example.com
+email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A site where I show off recent projects, discuss neat things I have learned, and be a nerd.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dougzu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://dougz.info" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-remote_theme: jekyll/minima # Force download of updated minima theme. Default minima that GitHub uses is super out of date. Attempted fix for: https://stackoverflow.com/questions/68518590/does-minima-dark-skin-work-on-github-pages
+remote_theme: jekyll/minima # Force download updated minima theme. Default minima that GitHub uses is out of date. Fix suggested from: https://stackoverflow.com/questions/68518590/does-minima-dark-skin-work-on-github-pages
 #theme: minima
 minima: 
   skin: dark
@@ -39,6 +37,12 @@ plugins:
   - jekyll-katex
 
 markdown: kramdown # Supports footnotes
+
+# Set header pages
+header_pages:
+  - index.markdown
+  - about.markdown
+#  - portfolio.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
