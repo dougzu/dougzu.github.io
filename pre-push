@@ -1,0 +1,43 @@
+# Obtained from: https://surdu.me/2020/02/04/jekyll-git-hook.html
+# Enter bash
+bash
+# Enable the extglob shell option so I can use rm !(file)
+shopt -s extglob
+# If any command fails in the below script, exit with error
+set -e
+
+temp_folder="._temp"
+
+# Make sure our main code runs only if we push the main branch
+if [ "$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" == "main" ]; then
+    # Store the last commit message from main branch
+    last_message=$(git show -s --format=%s main)
+
+    # Build our Jekyll site
+    bundle exec jekyll build
+
+    # Move the generated site in our temp folder
+    mv ./_site ./${temp_folder}
+    # Also move CNAME into the temp folder
+    cp ./CNAME ./${temp_folder}
+    # Checkout the gh-pages branch and clean it's contents. Don't delete temp_folder.
+    git checkout gh-pages
+    rm -rf !("${temp_folder}")
+
+    # Copy the site content from the temp folder and remove the temp folder
+    cp -r ./${temp_folder}/* .
+    rm -rf ./${temp_folder}
+
+    # Commit and push our generated site to GitHub
+    git add -A
+    git commit -m "Built \`$last_message\`"
+    git push
+
+    # Go back to the main branch
+    git checkout main
+    exit 0
+else
+    echo "Not main branch. Skipping build"
+fi
+# Enter zsh
+zsh

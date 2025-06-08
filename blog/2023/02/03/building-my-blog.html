@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Building My Blog | dougz.info</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Building My Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="On This Page Minimum Viable Product Developing the Blog Selecting an SSG Setting up Jekyll Selecting a Theme Hosting on GitHub Pages Adding LaTeX Support Analytics Final Thoughts" />
+<meta property="og:description" content="On This Page Minimum Viable Product Developing the Blog Selecting an SSG Setting up Jekyll Selecting a Theme Hosting on GitHub Pages Adding LaTeX Support Analytics Final Thoughts" />
+<link rel="canonical" href="https://dougz.info/blog/2023/02/03/building-my-blog.html" />
+<meta property="og:url" content="https://dougz.info/blog/2023/02/03/building-my-blog.html" />
+<meta property="og:site_name" content="dougz.info" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-03T12:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Building My Blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-03T12:00:00-06:00","datePublished":"2023-02-03T12:00:00-06:00","description":"On This Page Minimum Viable Product Developing the Blog Selecting an SSG Setting up Jekyll Selecting a Theme Hosting on GitHub Pages Adding LaTeX Support Analytics Final Thoughts","headline":"Building My Blog","mainEntityOfPage":{"@type":"WebPage","@id":"https://dougz.info/blog/2023/02/03/building-my-blog.html"},"url":"https://dougz.info/blog/2023/02/03/building-my-blog.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://dougz.info/feed.xml" title="dougz.info" />
+</head>
+<body><header class="site-header" role="banner">
+  <!-- KaTeX Import -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+  <!-- KaTeX Font Size Adjustment -->
+  <style>
+    .katex { font-size: 1.1em; }
+    .katex-display { overflow: auto hidden }
+  </style>
+
+  
+  <!-- GoatCounter Import -->
+  <script data-goatcounter="https://real-rangy-joyride-transept.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">dougz.info</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Blog</a><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/antenna_notes.html">Antenna Notes</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Building My Blog</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-02-03T12:00:00-06:00" itemprop="datePublished">
+        Feb 3, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="on-this-page">On This Page</h2>
+<ol>
+  <li><a href="#minimum-viable-product">Minimum Viable Product</a></li>
+  <li><a href="#developing-the-blog">Developing the Blog</a>
+    <ol>
+      <li><a href="#selecting-an-ssg">Selecting an SSG</a></li>
+      <li><a href="#setting-up-jekyll">Setting up Jekyll</a></li>
+      <li><a href="#selecting-a-theme">Selecting a Theme</a></li>
+      <li><a href="#hosting-on-github-pages">Hosting on GitHub Pages</a></li>
+      <li><a href="#adding-latex-support">Adding LaTeX Support</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+    </ol>
+  </li>
+  <li><a href="#final-thoughts">Final Thoughts</a></li>
+</ol>
+
+<hr />
+
+<p>I have a <em>lot</em> of projects gathering dust in my project graveyard. Most of the time, my projects end up there not because they’re bad ideas or lose value but because I let my imagination run free. I expand the project scope while working on it until what started as a small project becomes very, very large. Then I drop the project for something fun and faster to complete.</p>
+
+<p>Rinse and repeat.</p>
+
+<p>One project I’ve wanted to work on for a while is a blog where I can discuss what I have learned and show off recent projects. The blog has been in the graveyard for almost two years now.</p>
+
+<p>So I’m going to try something new<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>:</p>
+<ul>
+  <li>Define a strict minimum viable product for my blog</li>
+  <li>Estimate how long it will take to complete</li>
+  <li>Try to develop it <em>as fast as possible</em>.</li>
+</ul>
+
+<p>No scope expansions, embellishments, or cool features. <strong>Just get the thing working.</strong></p>
+
+<details>
+<summary><strong>Click here for the TL;DR.</strong></summary>
+<!--<p style="background-color:#212121;border:2px solid;border-color:#404040;">-->
+With almost zero prior web experience, I created a blog that is responsive to changes in display size, supports code segments, images, footnotes, and LaTeX typesetting, and is not built with a drag-and-drop editor like Wix or Squarespace. The site is generated locally using Jekyll and hosted on GitHub. LaTeX is rendered with the KaTeX Jekyll plugin. From start to finish, the site took about 5 hours and 17 minutes.
+<br /><br />
+Challenging myself to complete the project as fast as possible was a success, and I will probably try it again.
+<!--</p>-->
+</details>
+
+<h2 id="minimum-viable-product">Minimum Viable Product</h2>
+<p>Before doing anything else, I need to specify what features my site should have. I did a little thinking and came up with some simple requirements:</p>
+<ol>
+  <li>Accessible through my custom domain</li>
+  <li>Have an about me page and a blog. I can add a project page later.</li>
+  <li>Be responsive to changes in display size.</li>
+  <li>Be easy to add pages and blog posts to</li>
+  <li>Support code segments, images, footnotes, and LaTeX typesetting.</li>
+  <li>Provide analytics for page views, but dot not feel creepy (looking at you, Google Analytics!)</li>
+  <li>Not be built with a drag-and-drop editor like Wix, Squarespace, etc.</li>
+</ol>
+
+<p>I have no web development experience and only enough software experience to be a reasonable kitty-scripter, which is a long way of saying I have <em>no idea</em> what I’m doing. I will choose a random number for how long I expect this will take me.. 10 hours. That’s the goal: Build a blog as quickly as possible, ideally beating my 10-hour expectation.</p>
+
+<p>Let’s get started.</p>
+
+<h2 id="developing-the-blog">Developing the Blog</h2>
+<h3 id="selecting-an-ssg">Selecting an SSG</h3>
+<p>If I don’t want to use a drag-and-drop website builder like Wix, then I think I only have two choices:</p>
+<ol>
+  <li>Build my site from scratch by explicitly writing HTML, CSS, and JS</li>
+  <li>Use a static site generator (SSG) to transform markdown into HTML, CSS, and JS</li>
+</ol>
+
+<p>I would usually select the first approach because it appeals to my hacky interests, but I can’t this time. With my web experience, building my site from scratch would take <em>way</em> too long. Not to mention it would probably be difficult to maintain. An SSG is the way to go.</p>
+
+<p>Which static site generator should I use? There are many options, such as <a href="https://hexo.io/">Hexo</a>, <a href="https://www.getzola.org/">Zola</a>, and <a href="https://gohugo.io/">Hugo</a>, to name a few, but I’m choosing to use <a href="https://jekyllrb.com/">Jekyll</a>. It’s (apparently) not as fast as other options and unfortunately requires a Ruby environment to run, but it has been around forever, has many online resources, and is supported by GitHub Pages. I can make speed issues a problem for future me. Plus, if I run <code class="language-plaintext highlighter-rouge">ruby -v</code> in my terminal, it looks like I already have Ruby on my Mac!</p>
+
+<h3 id="setting-up-jekyll">Setting up Jekyll</h3>
+<p>Setting up Jekyll looks easy. Start by installing it via <code class="language-plaintext highlighter-rouge">gem install jekyll bundler</code>, and the- Wait, that didn’t work.</p>
+
+<p>The Ruby environment bundled in macOS is meant for the system, not the user. Without using <code class="language-plaintext highlighter-rouge">sudo</code>, I can’t install gems using the system environment. Further, while using <code class="language-plaintext highlighter-rouge">sudo</code> may work, everyone says not to do it because you can mess up the system environment. This seems like good advice.</p>
+
+<p>Fortunately, I found a <a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/?utm_source=stackoverflow&amp;utm_campaign=51126403">helpful guide</a> maintained by Moncef Belyamani that walks through setting up and managing versions of Ruby on macOS. He also has a tool that claims to do everything for you, but I found the website plenty helpful.</p>
+
+<p>Now <code class="language-plaintext highlighter-rouge">gem install jekyll bundler</code> works, and I can create a new temporary blog using <code class="language-plaintext highlighter-rouge">jekyll new temp_blog</code>. To serve it, I run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>. It works!</p>
+
+<p>According to my notes, it has taken about 47 minutes<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> to get to this point. I spent most of that time was spent realizing I shouldn’t use system Ruby, setting up a different Ruby environment, and fixing odd homebrew issues. Not bad.</p>
+
+<h3 id="selecting-a-theme">Selecting a Theme</h3>
+<p>After some Googling and consideration, I decided to stick with the Minima theme for my page. There are plenty of other clean and simple themes to select from, but Minima is the default one used by new Jekyll projects and does almost exactly what I want out of the box. The only modification I want to make is in <code class="language-plaintext highlighter-rouge">_config.yml</code>, where I instruct Minima to use the default dark skin.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">...</span>
+<span class="na">minima</span><span class="pi">:</span> 
+  <span class="na">skin</span><span class="pi">:</span> <span class="s">dark</span>
+<span class="nn">...</span></code></pre></figure>
+
+<p>And that’s it. My blog has a clean, dark skin. I may change it in the future, but that’s not important for getting this project done.</p>
+
+<h3 id="hosting-on-github-pages">Hosting on GitHub Pages</h3>
+<p>Hosting my site on GitHub Pages is a no-brainer; it’s free, and I already use GitHub. The real question is whether I should take advantage of GitHub’s Jekyll support and make GitHub build my site for me. Having GitHub build the site for me is simpler and means I don’t need a Ruby environment to make future changes to my site from other devices, but it has the drawback that some plugins might not work. I don’t know if LaTeX rendering will work on GitHub Pages.</p>
+
+<p>For the moment, I will use GitHub to host and build my site so I can connect my custom domain name and get that working. It doesn’t take much time to create a new <code class="language-plaintext highlighter-rouge">xxx.github.io</code> repository, clone it, run <code class="language-plaintext highlighter-rouge">jekyll new .</code> in that repository, and push. Because I already have a domain name, all I need to do is follow GitHub’s <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">documentation</a> on configuring it.</p>
+
+<p>One problem: My theme isn’t right. The version of Minima used by GitHub Pages does not support skins, so I need to instruct GitHub Pages to download the latest version. That’s just a one-liner in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file, fortunately.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">...</span>
+<span class="na">remote_theme</span><span class="pi">:</span> <span class="s">jekyll/minima</span> <span class="c1"># Force download updated minima theme. Default minima that GitHub uses is out of date. Fix suggested from: https://stackoverflow.com/questions/68518590/does-minima-dark-skin-work-on-github-pages</span>
+<span class="na">minima</span><span class="pi">:</span> 
+  <span class="na">skin</span><span class="pi">:</span> <span class="s">dark</span>
+<span class="nn">...</span></code></pre></figure>
+
+<p>With some additional messing around with my domain settings, it works! For the first time in two years, <a href="https://dougz.info/">dougz.info</a> is finally beginning to look like something I can use!</p>
+
+<p>To go from a local webserver to viewing my site through my custom domain has taken about 1 hour and 48 minutes of on-and-off work. According to my notes, I most of this time was spent messing with my custom domain, getting it pointed to GitHub properly, and correcting the theme issue.</p>
+
+<h3 id="adding-latex-support">Adding LaTeX Support</h3>
+<p>To render LaTeX on my site, I need to add a JS library like MathJax or <a href="https://github.com/linjer/jekyll-katex">KaTeX</a>. Both libraries should work, but I’ll go with KaTeX because it claims to render faster and is easy to implement in just three steps.</p>
+
+<p>Surprisingly, this just worked out of the box! Here’s an example of rendering LaTeX both in-line and in display mode.</p>
+
+<blockquote>
+
+  <p>This is a test of rendering LaTeX using the KaTeX library. I frequently find it useful to explain the math behind a design, which necessitates writing expressions in-line (e.g., <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>V</mi></msub><mo>≈</mo><mo>−</mo><msub><mi>g</mi><mi>m</mi></msub><mi mathvariant="normal">/</mi><msub><mi>g</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">A_{V}\approx-g_m/g_o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.22222em;">V</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>). Sometimes, expressions are more complex and benefit from being written in their own line (display mode):</p>
+</blockquote>
+
+<blockquote>
+  <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mrow><mi>D</mi><mi>C</mi></mrow></msub><mo>=</mo><mn>2</mn><mrow><mo fence="true">[</mo><msub><mi>V</mi><mi>m</mi></msub><mfrac><msub><mi>C</mi><mn>2</mn></msub><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><msub><mi>C</mi><mi>S</mi></msub></mrow></mfrac><mo>−</mo><msub><mi>V</mi><mi>D</mi></msub><mo fence="true">]</mo></mrow><mo>−</mo><mfrac><mrow><mn>2</mn><msub><mi>I</mi><mi>L</mi></msub></mrow><mrow><msub><mi>f</mi><mn>0</mn></msub><mrow><mo fence="true">(</mo><msub><mi>C</mi><mi>C</mi></msub><mo>+</mo><msub><mi>C</mi><mi>S</mi></msub><mo fence="true">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">V_{DC} = 2\left[V_m\frac{C_2}{C_2+C_S}-V_D\right] - \frac{2I_L}{f_0\left(C_C+C_S\right)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.29633em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+</blockquote>
+
+<blockquote>
+  <p>Wrapping my paragraph with  <code class="language-plaintext highlighter-rouge">{% katexmm %}</code> and <code class="language-plaintext highlighter-rouge">{% endkatexmm %}</code>  makes embedding LaTeX in text very easy.</p>
+
+</blockquote>
+
+<p>However, as soon as I push this to GitHub Pages, it stops working. As anticipated, GitHub Pages’ Jekyll build doesn’t support the KaTeX plugin. To use KaTeX on my site, I will need to upload the contents of <code class="language-plaintext highlighter-rouge">_site</code> directly to GitHub Pages and serve that content.</p>
+
+<p>The solution:</p>
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">gh-pages</code> branch in the repository.</li>
+  <li>serve my site from that repo.</li>
+  <li>Push the contents of <code class="language-plaintext highlighter-rouge">_site</code> to that branch.</li>
+</ol>
+
+<p>I can push everything else to the main branch since it is not serving my site<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
+
+<p>Copying the contents of <code class="language-plaintext highlighter-rouge">_site</code> and pushing to two branches every time I want to make a change would be a nuisance. Fortunately, in my Googling, I learned about pre-push and pre-commit hooks. With some small modifications of the script presented <a href="https://surdu.me/2020/02/04/jekyll-git-hook.html">here</a>, I made a pre-push hook that automatically pushes the contents of <code class="language-plaintext highlighter-rouge">_site</code> to <code class="language-plaintext highlighter-rouge">gh-pages</code> anytime I push to the main branch. Here’s my modified script:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># Enable the extglob shell option so I can use rm !(file)</span>
+<span class="nb">shopt</span> <span class="nt">-s</span> extglob
+<span class="c"># If any command fails in the below script, exit with error</span>
+<span class="nb">set</span> <span class="nt">-e</span>
+
+<span class="nv">temp_folder</span><span class="o">=</span><span class="s2">"._temp"</span>
+
+<span class="c"># Make sure our main code runs only if we push the main branch</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="si">$(</span>git rev-parse <span class="nt">--symbolic-full-name</span> <span class="nt">--abbrev-ref</span> HEAD<span class="si">)</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"main"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c"># Store the last commit message from main branch</span>
+    <span class="nv">last_message</span><span class="o">=</span><span class="si">$(</span>git show <span class="nt">-s</span> <span class="nt">--format</span><span class="o">=</span>%s main<span class="si">)</span>
+
+    <span class="c"># Build our Jekyll site</span>
+    bundle <span class="nb">exec </span>jekyll build
+
+    <span class="c"># Move the generated site in our temp folder</span>
+    <span class="nb">mv</span> ./_site ./<span class="k">${</span><span class="nv">temp_folder</span><span class="k">}</span>
+    <span class="c"># Also move CNAME into the temp folder</span>
+    <span class="nb">cp</span> ./CNAME ./<span class="k">${</span><span class="nv">temp_folder</span><span class="k">}</span>
+    <span class="c"># Checkout the gh-pages branch and clean it's contents. Don't delete temp_folder.</span>
+    git checkout gh-pages
+    <span class="nb">rm</span> <span class="nt">-rf</span> <span class="o">!(</span><span class="s2">"</span><span class="k">${</span><span class="nv">temp_folder</span><span class="k">}</span><span class="s2">"</span><span class="o">)</span>
+
+    <span class="c"># Copy the site content from the temp folder and remove the temp folder</span>
+    <span class="nb">cp</span> <span class="nt">-r</span> ./<span class="k">${</span><span class="nv">temp_folder</span><span class="k">}</span>/<span class="k">*</span> <span class="nb">.</span>
+    <span class="nb">rm</span> <span class="nt">-rf</span> ./<span class="k">${</span><span class="nv">temp_folder</span><span class="k">}</span>
+
+    <span class="c"># Commit and push our generated site to GitHub</span>
+    git add <span class="nt">-A</span>
+    git commit <span class="nt">-m</span> <span class="s2">"Built </span><span class="se">\`</span><span class="nv">$last_message</span><span class="se">\`</span><span class="s2">"</span>
+    git push
+
+    <span class="c"># Go back to the main branch</span>
+    git checkout main
+    <span class="nb">exit </span>0
+<span class="k">else
+    </span><span class="nb">echo</span> <span class="s2">"Not main branch. Skipping build"</span>
+<span class="k">fi</span></code></pre></figure>
+
+<p>The original hook would have worked just as well, but I didn’t like that it operated in the parent directory<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>. My hook differs in that it utilizes a temporary folder in the repository, ignored by git (thanks <code class="language-plaintext highlighter-rouge">.gitignore</code>), as the swap directory. Also, I copy over <code class="language-plaintext highlighter-rouge">CNAME</code> to maintain my custom domain name settings and return 0 on exit so the push to <code class="language-plaintext highlighter-rouge">main</code> goes through.</p>
+
+<h3 id="analytics">Analytics</h3>
+<p>For analytics, I am using <a href="https://www.goatcounter.com/">GoatCounter</a> because it is easy to implement, free (but accepts donations), open-source, and seems less intrusive than Google Analytics.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I need to make many adjustments before I’ll be happy with how <a href="https://dougz.info/">dougz.info</a> works and feels. The color scheme, especially, needs attention. However, the site <em>actually</em> exists now, which is more than I could say before. Whether I will use it in the future is yet to be seen.</p>
+
+<p>According to my notes, I took 3 hours and 47 minutes to get the site running per my defined requirements. It is more realistic to say that it took me an hour and a half longer than my notes stated (5 hours and 17 minutes) because I forgot to track my time in some situations, such as when reading on the bus.</p>
+
+<p>Writing firm requirements for the first revision of the blog, and then challenging myself to develop it as quickly as possible, was a very successful exercise. I may do it again in the future for other small projects.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>New to me. Obvious to most people. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Not including when my laptop downloaded dependencies and I was scrolling Reddit. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>I have no reason to <em>actually</em> use Git properly. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>At some point when testing, I messed up and the hook started copying all of <code class="language-plaintext highlighter-rouge">~</code> into my repository. That scared me a lot - what if <code class="language-plaintext highlighter-rouge">rm</code> had run in <code class="language-plaintext highlighter-rouge">~</code> instead of <code class="language-plaintext highlighter-rouge">cp</code>? After that, I decided I wasn’t OK with the hook running outside my repository directory. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/blog/2023/02/03/building-my-blog.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://dougz.info/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A site where I show off recent projects, discuss neat things I have learned, and be a nerd.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
