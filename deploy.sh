@@ -43,9 +43,9 @@ cp -r "CNAME" "$PUBLIC_REPO_DIR"
 
 # === Step 3: Commit and push ===
 cd "$PUBLIC_REPO_DIR"
-git checkout main
+git checkout -B gh-pages
 git add .
 git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit."
-git push -f origin main
+git push -f origin gh-pages
 
 echo "✅ Deployed successfully."
