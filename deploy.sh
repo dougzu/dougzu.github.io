@@ -40,6 +40,7 @@ cd -
 echo "📁 Copying new site to '$PUBLIC_REPO_DIR'..."
 cp -r "$BUILD_DIR"/. "$PUBLIC_REPO_DIR"
 cp -r "CNAME" "$PUBLIC_REPO_DIR"
+touch "$PUBLIC_REPO_DIR/.nojekyll" # Keep Github from trying to build the page remotely
 
 # === Step 3: Commit and push ===
 cd "$PUBLIC_REPO_DIR"
